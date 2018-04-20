@@ -6,7 +6,7 @@ const ENV = {};
 
 ENV.isProduction = window.location.protocol === 'https:';
 ENV.productionApiUrl = 'https://ja-am-book-app.herokuapp.com/api/v1/books';
-ENV.developmentApiUrl = 'postgres://postgres:82469173@localhost:5432/books_app';
+ENV.developmentApiUrl = 'http://localhost:3000';
 ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
 
 (function(module) {
