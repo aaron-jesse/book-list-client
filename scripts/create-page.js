@@ -2,12 +2,12 @@ var app = app || {};
 
 (module => {
 
-   const createPage = {}
+   const createView = {}
 
-   createPage.init = () => {
-       $('#create-page').off().on('submit', 'form', (event) => {
+   createView.init = () => {
+       $('#create-book-name').on('submit', 'form', (event) => {
            event.preventDefault()
-           const name = $('#create-form-name').val()
+           const name = $('#create-book-name').val()
            app.Book.create({ name }).then(page('/'))
            $('#create-form-name').val('')
        })
@@ -15,6 +15,6 @@ var app = app || {};
        $('#create-page').show()
    }
 
-   module.createPage = createPage
+   module.createView = createView
 
 })(app)
