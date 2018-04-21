@@ -28,7 +28,8 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
   Book.loadAll = rows => Book.all = rows.sort((a, b) => b.title - a.title).map(book => new Book(book));
 
   Book.fetchAll = callback =>
-    $.get(`${ENV.apiUrl}/api/v1/books`)
+  //moved api call to uncomment and test deployed app/api/v1/books
+    $.get(`${ENV.apiUrl}`)
       .then(Book.loadAll)
       .then(callback)
       .catch(errorCallback);
