@@ -1,6 +1,5 @@
 'use strict';
-
-// page('/', app.bookView.initIndexPage);
+;
 
 // if(window.location.protocol.startsWith('https')) {
 //     page.base('/aaron-jesse.github.io/book-list-client/');
@@ -11,9 +10,9 @@
     next()
   })
   
-  page('/', () => app.Book.fetchAll(app.bookView.initIndexPage))
+  page('/', app.bookView.initIndexPage);
   
-  // page('/detailView', app.Book.fetchOne(app.bookView.viewOneBook))
-  page('/createView', app.bookView.createPage);
+  // page('/detailView', () => app.Book.fetchOne(app.bookView.viewOneBook));
+  page('/create', app.bookView.createPage);
   
 page.start()

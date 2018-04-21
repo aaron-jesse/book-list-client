@@ -26,8 +26,12 @@ var app = app || {};
   module.bookView = bookView;
 })(app)
 
-// $(function() {
-//   app.Book.fetchAll(app.bookView.initIndexPage);
-// })
+$(function() {
+  app.Book.fetchAll(app.bookView.initIndexPage);
+})
+
+$(function () {
+  app.bookView.createPage();
+})
 
 
