@@ -36,8 +36,12 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
   Book.fetchOne = (id) => {
    return $.getJSON(ENV.apiUrl + '/' + id)
    .catch(err => console.error(err))
-    
   }
 
+  Book.createOne = book => {
+    $.post(ENV.apiUrl, book)
+    .catch(err => console.log(err));
+  }
+  
   module.Book = Book;
 })(app)
