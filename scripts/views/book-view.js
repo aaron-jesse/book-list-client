@@ -18,9 +18,16 @@ var app = app || {};
     
   }
 
+  bookView.createPage = function () {
+    $('.container').hide();
+    $('.create-page').show();
+  }
+
   module.bookView = bookView;
 })(app)
 
-$(function() {
-  app.Book.fetchAll(app.bookView.initIndexPage);
-})
+// $(function() {
+//   app.Book.fetchAll(app.bookView.initIndexPage);
+// })
+
+
