@@ -30,8 +30,6 @@ $(function() {
   app.Book.fetchAll(app.bookView.initIndexPage);
 })
 
-$(function () {
-  app.bookView.createPage();
-})
+
 
 

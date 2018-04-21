@@ -10,9 +10,9 @@
     next()
   })
   
-  page('/', app.bookView.initIndexPage);
+  page('/', () => app.bookView.initIndexPage());
   
   // page('/detailView', () => app.Book.fetchOne(app.bookView.viewOneBook));
-  page('/create', app.bookView.createPage);
+  page('/create', () => app.bookView.createPage());
   
 page.start()
