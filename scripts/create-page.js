@@ -5,7 +5,7 @@ var app = app || {};
    const createView = {}
 
    createView.init = () => {
-       $('#create-book-name').on('submit', 'form', (event) => {
+       $('#create-book-name').off().on('submit', 'form', (event) => {
            event.preventDefault()
            const name = $('#create-book-name').val()
            app.Book.create({ name }).then(page('/'))
