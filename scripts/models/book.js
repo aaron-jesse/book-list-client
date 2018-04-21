@@ -34,6 +34,10 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
       .catch(errorCallback);
 
   Book.fetchOne = (id) => {
+    function load (ctx, next){
+      var id = ctx.params.id;
+    }
+
    return $.getJSON(ENV.apiUrl + '/' + id)
    .catch(err => console.error(err))
   }
@@ -42,6 +46,6 @@ ENV.apiUrl = ENV.isProduction ? ENV.productionApiUrl : ENV.developmentApiUrl;
     $.post(ENV.apiUrl, book)
     .catch(err => console.log(err));
   }
-  
+
   module.Book = Book;
 })(app)

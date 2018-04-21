@@ -1,9 +1,9 @@
 'use strict';
 
-page('/', app.bookView.initIndexPage);
+// page('/', app.bookView.initIndexPage);
 
 if(window.location.protocol.startsWith('https')) {
-    page.base('/api/v1/books');
+    page.base('/aaron-jesse.github.io/book-list-client/');
   }
   
   page('/*', (ctx, next) => {
@@ -11,9 +11,9 @@ if(window.location.protocol.startsWith('https')) {
     next()
   })
   
-  page('/', app.bookView.initIndexPage)
-  page('/listView', app.bookView.initIndexPage)
-  page('/detailView', app.bookView.viewOneBook)
-  page('/createView', app.createView.init)
+  page('/', app.Book.fetchAll(app.bookView.initIndexPage))
+  
+  page('/detailView', app.Book.fetchOne(app.bookView.viewOneBook))
+  page('/createView', app.bookView.createPage)
   
 page.start()
