@@ -2,18 +2,18 @@
 
 // page('/', app.bookView.initIndexPage);
 
-if(window.location.protocol.startsWith('https')) {
-    page.base('/aaron-jesse.github.io/book-list-client/');
-  }
+// if(window.location.protocol.startsWith('https')) {
+//     page.base('/aaron-jesse.github.io/book-list-client/');
+//   }
   
   page('/*', (ctx, next) => {
-    $('.page').hide()
+    $('.container').hide()
     next()
   })
   
-  page('/', app.Book.fetchAll(app.bookView.initIndexPage))
+  page('/', () => app.Book.fetchAll(app.bookView.initIndexPage))
   
-  page('/detailView', app.Book.fetchOne(app.bookView.viewOneBook))
-  page('/createView', app.bookView.createPage)
+  // page('/detailView', app.Book.fetchOne(app.bookView.viewOneBook))
+  page('/createView', app.bookView.createPage);
   
 page.start()
