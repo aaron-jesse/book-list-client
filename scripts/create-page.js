@@ -2,7 +2,7 @@ var app = app || {};
 
 (module => {
 
-   const createView = {}
+   const create = {}
 
    createView.init = () => {
        $('#create-book-name').off().on('submit', 'form', (event) => {

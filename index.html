@@ -21,12 +21,27 @@
       <div class="book-container">
         <img src={{image}}>
         <div class="book-overlay">
-          <h3>{{title}}</h3>
+          <a href="books/{{book_id}}"><h3>{{title}}</h3></a>
           <p>{{author}}</p>
         </div>
       </div>
     </li>
   </script>
+
+  <script type="text/x-handlebars-template" id="single-book-template">
+    <li class="book-items" data-bookid={{book_id}}>
+      <div class="book-container">
+        <img src={{image}}>
+        <div class="book-overlay">
+          <h3>{{title}}</h3>
+          <p>{{description}}</p>
+          <p>{{author}}</p>
+         
+        </div>
+      </div>
+    </li>
+  </script>
+
 </head>
 <body>
   <header>

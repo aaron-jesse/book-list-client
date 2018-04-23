@@ -11,14 +11,14 @@ var app = app || {};
     module.Book.all.map(book => $('#book-list').append(book.toHtml()));
   }
 
-
-  bookView.viewOneBook = function(){
+  bookView.viewOneBook = function(oneBook){
     $('.container').hide();
     $('.single-book-view').show();
-    
-  }
+      let template = Handlebars.compile($('#single-book-template').text());
+      $('.single-book-view').append(template(oneBook));
+  };
 
-  bookView.createPage = function () {
+  bookView.createBook = function () {
     $('.container').hide();
     $('.create-page').show();
   }

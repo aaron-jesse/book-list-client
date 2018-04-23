@@ -10,9 +10,14 @@
     next()
   })
   
-  page('/', () => app.bookView.initIndexPage());
+  page('/', app.bookView.initIndexPage);
   
-  // page('/detailView', () => app.Book.fetchOne(app.bookView.viewOneBook));
-  page('/create', () => app.bookView.createPage());
+  page('/books/:id', (ctx) =>{
+    app.Book.fetchOne(ctx.params.id).then((bookdata) => {
+    app.bookView.viewOneBook(bookdata);
+    });
+});
+
+  page('/books/new', () => app.bookView.createPage);
   
 page.start()
