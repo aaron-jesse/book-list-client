@@ -2,7 +2,7 @@
 ;
 
 if(window.location.protocol.startsWith('https')) {
-    page.base('/aaron-jesse.github.io/book-list-client/');
+    page.base('/book-list-client');
   }
   
   page('/*', (ctx, next) => {
